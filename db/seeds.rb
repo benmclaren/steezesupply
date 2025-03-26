@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+brands = ['Oakley', 'ELHO Freestyle', "Capeesh", "BUSI Company", "Spyder", "Harlaut Apparel", "Vulgus 365", "Lead Fabris", "Jibskin", "Jiberish", "Planks", "NinetyRoll", "Arc'teryx", "Adidas Terrex"]
+
+brands.each do |brand|
+  Brand.create(name: brand)
+end
+
