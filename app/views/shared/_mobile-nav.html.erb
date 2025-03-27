@@ -1,4 +1,10 @@
-<nav class="mobile-nav" data-mobile-menu-target="nav">
+<nav class="mobile-nav py-[26px]" data-mobile-menu-target="nav">
+  <div class="w-full px-4 flex justify-end">
+    <%= image_tag 'close', data: { action: "click->mobile-menu#close", target: "close" }, class:'icon' %>
+  </div>
+  <div class="px-4 py-8">
+    <%= image_tag "steezesupplylogo"  %>
+  </div>
   <ul class="flex flex-col">
     <li class="inline">
       <%= link_to "Brands", "#", class: "inline-block font-secondary px-4 py-2" %>

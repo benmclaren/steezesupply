@@ -11,8 +11,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div data-controller="mobile-menu">
+  <body data-controller="mobile-menu" data-mobile-menu-target="body">
+    <div>
       <header class="px-4 lg:px-8">
         <%= render "shared/navbar" %>
       </header>
