@@ -11,6 +11,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  background-color: #fff;
 }
 
 a {
@@ -63,6 +64,7 @@ body {
   font-family: var(--font-base);
   font-size: var(--font-size-md);
   font-weight: 400;
+
 }
 
 details>summary {
@@ -76,4 +78,19 @@ details>summary::-webkit-details-marker {
 .icon {
   width: 32px;
   height: 32px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $headers-font;
+}
+
+.highlight {
+  color: #428CF2;
+}
+
+.hero-text {
+  max-width: 560px;
 }
