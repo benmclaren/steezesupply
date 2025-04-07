@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :brands, only: [:index, :show]
   resources :athletes, only: [:index, :show]
+  get '/search', to: 'search#index', as: :search
 end
