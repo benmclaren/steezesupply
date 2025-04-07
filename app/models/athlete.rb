@@ -10,4 +10,13 @@ class Athlete < ApplicationRecord
   def to_param
     "#{first_name}-#{last_name}".downcase.parameterize
   end
+
+  def age
+    return unless date_of_birth
+
+    now = Time.zone.today
+    age = now.year - date_of_birth.year
+    age -= 1 if date_of_birth.change(year: now.year) > now
+    age
+  end
 end
