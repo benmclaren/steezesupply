@@ -1,9 +1,24 @@
 <div class="md:flex justify-between items-center lg:ml-8">
-  <h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">Find Your Ride. Shred in <u class="highlight">Style.</u></h1>
-  <%= cl_image_tag("https://res.cloudinary.com/dy35n8sog/image/upload/v1743088306/470204844_18475577179028339_4439214183318806819_n_psljny.jpg", class:"lg:w-1/2") %>
+  <div>
+    <h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">Find Your Ride. Shred in <u class="highlight">Style.</u></h1>
+    
+    <label class="input w-full mt-8">
+      <%= button_tag type: "submit", class: "search-button" do %>
+        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+      <% end %>
+      <%= form_with url: search_path, method: :get, class:" w-full", local: true do %>
+        <%= text_field_tag :q, params[:q], placeholder: "Search for a brand or athlete", class: "opacity-50 input focus:outline-none focus:ring-0" %>
+      <% end %>
+    </label>
+   
+  </div>
+  <%= image_tag("hero_banner", class:"lg:w-1/2 hero") %>
 </div>
 
-<%= form_with url: search_path, method: :get, local: true do %>
-  <%= text_field_tag :q, params[:q], placeholder: "Search for a brand or athlete", class: "search-input" %>
-  <%= submit_tag "Search", class: "search-button" %>
-<% end %>
+
+
