@@ -1,0 +1,12 @@
+<h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">Athletes</h1>
+<ul>
+  <% @athletes.each do |athlete| %>
+    <li>
+      <%= link_to athlete_path(athlete) do %>
+        <%= athlete.first_name %>
+        <%= athlete.last_name %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
