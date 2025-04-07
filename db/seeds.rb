@@ -37,3 +37,17 @@ brands.each do |brand_data|
 
   puts "Created #{brand.name} with image #{brand_data[:image]}"
 end
+
+Athlete.destroy_all
+puts "all athletes destroyed"
+
+athletes = [
+  { first_name: "Andri", last_name: "Ragettli", nationality: "Switzerland", age: 26, home_resort: "Laax, Switzerland" },
+  { first_name: "Alex", last_name: "Hall", nationality: "United States", age: 26, home_resort: "Park City, Utah" }
+]
+
+athletes.each do |athlete_data|
+  athlete = Athlete.create(first_name: athlete_data[:first_name], last_name: athlete_data[:last_name], nationality: athlete_data[:nationality], age: athlete_data[:age], home_resort: athlete_data[:home_resort])
+
+  puts "Created #{athlete.first_name} #{athlete.last_name}"
+end

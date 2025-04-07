@@ -1,5 +1,5 @@
 <h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">Brands</h1>
-<div class="mt-16 grid grid-cols-4 items-center justify-center gap-x-8 gap-y-24">
+<div class="mt-16 md:grid grid-cols-4 items-center justify-center gap-x-8 gap-y-24">
   <% @brands.order(:name).each do |brand| %>
     <%= link_to brand_path(brand) do %>
       <div class="flex justify-center">
