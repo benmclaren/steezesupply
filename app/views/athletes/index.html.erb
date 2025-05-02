@@ -1,12 +1,15 @@
 <h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">Athletes</h1>
-<ul>
+<div class="grid grid-cols-5 gap-6">
   <% @athletes.each do |athlete| %>
-    <li>
+    <div class="text-center flex justify-center">
       <%= link_to athlete_path(athlete) do %>
-        <%= athlete.first_name %>
-        <%= athlete.last_name %>
+        <%= cl_image_tag athlete.photo.key, class:'rounded-full object-cover size-56 mb-3' %>
+        <p>
+          <%= athlete.first_name %>
+          <%= athlete.last_name %>
+        </p>
       <% end %>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
 

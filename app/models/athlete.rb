@@ -1,4 +1,7 @@
 class Athlete < ApplicationRecord
+  has_many :athlete_brands
+  has_many :brands, through: :athlete_brands
+  has_one_attached :photo
   include PgSearch::Model
 
   pg_search_scope :search_by_name,
