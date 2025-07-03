@@ -28,6 +28,8 @@ brands = [
   { name: "Faction", image: "faction.png"}
 ]
 
+brand_records = {}
+
 brands.each do |brand_data|
   brand = Brand.create(name: brand_data[:name])
   
@@ -38,6 +40,7 @@ brands.each do |brand_data|
     content_type: "image/jpeg"
   )
 
+  brand_records[brand_data[:name]] = brand
   puts "Created #{brand.name} with image #{brand_data[:image]}"
 end
 
@@ -64,6 +67,23 @@ athletes = [
   { first_name: "Candide", last_name: "Thovex", nationality: "France", date_of_birth: "1982-05-22", home_resort: "La Clusaz, France", image: "candidethovex.jpeg", gear_sponsor: "Candide" }
 ]
 
+clothing = {
+  "Andri Ragettli"  => ["ELHO Freestyle"],
+  "Alex Hall"       => ["Moncler"],
+  "Luca Harrington" => ["Oakley", "ELHO Freestyle"],
+  "Mac Forehand"    => ["Oakley", "Spyder"],
+  "Tormod Frostad"  => ["Capeesh"],
+  "Matej Svancer"   => ["Capeesh"],
+  "Birk Ruud"       => ["BUSI Company", "Capeesh"],
+  "Max Moffatt"     => ["Oakley", "Jiberish"],
+  "Colby Stevenson" => ["Oakley", "Jiberish"],
+  "Jesper Tjäder"   => ["Oakley", "Jiberish"],
+  "Ferdinand Dahl"  => ["Oakley", "Jiberish"],
+  "Henrik Harlaut"  => ["Harlaut Apparel", "Jiberish"],
+  "Candide Thovex"  => ["Candide"]
+}
+
+
 athletes.each do |athlete_data|
   athlete = Athlete.create(first_name: athlete_data[:first_name], last_name: athlete_data[:last_name], nationality: athlete_data[:nationality], date_of_birth: athlete_data[:date_of_birth], home_resort: athlete_data[:home_resort], gear_sponsor: athlete_data[:gear_sponsor])
 
@@ -74,8 +94,13 @@ athletes.each do |athlete_data|
     content_type: "image/jpeg"
   )
 
-  brand = Brand.find_by(name: athlete_data[:gear_sponsor])
-  athlete.brands << brand if brand.present?
+  full_name = "#{athlete.first_name} #{athlete.last_name}"
+  Array(clothing[full_name]).each do |brand_name|
+    brand = brand_records[brand_name]
+    athlete.brands << brand if brand && !athlete.brands.include?(brand)
+  end
+
 
   puts "Created #{athlete.first_name} #{athlete.last_name} with image #{athlete_data[:image]}"
 end
+
