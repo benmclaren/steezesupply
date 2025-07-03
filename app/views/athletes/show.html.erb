@@ -2,3 +2,11 @@
   <%= @athlete.first_name %>
   <%= @athlete.last_name %>
 </h1>
+<p><%= @athlete.nationality %></p>
+<p><%= @athlete.age %></p>
+<p><%= @athlete.home_resort %></p>
+<% @athlete.brands.each do |brand| %>
+  <p><%= brand.name %></p>
+<% end %>
+
+
