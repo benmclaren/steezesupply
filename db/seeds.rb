@@ -25,7 +25,21 @@ brands = [
   { name: "Planks", image: "planks.png" },
   { name: "NinetyRoll", image: "ninetyroll.png" },
   { name: "Candide", image: "candide.png" },
-  { name: "Faction", image: "faction.png"}
+  { name: "Faction", image: "faction.png"},
+  { name: "Armada", image: "armada.png"},
+  { name: "Vökl", image: "vökl.png"},
+  { name: "Vishnu", image: "vishnu.png"},
+  { name: "K2", image: "k2.png"},
+  { name: "Head", image: "head.png"},
+  { name: "Moncler", image: "moncler.png"},
+  { name: "ON3P", image: "on3p.png"},
+  { name: "Marker", image: "marker.png"},
+  { name: "Tyrolia", image: "tyrolia.png"},
+  { name: "Smith", image: "smith.png"},
+  { name: "Line", image: "line.png"},
+  { name: "Atomic", image: "atomic.png"},
+  { name: "100%", image: "100percent.png"},
+  { name: "1000", image: "1000.png"}
 ]
 
 brand_records = {}
@@ -70,16 +84,16 @@ athletes = [
 clothing = {
   "Andri Ragettli"  => ["ELHO Freestyle"],
   "Alex Hall"       => ["Moncler"],
-  "Luca Harrington" => ["Oakley", "ELHO Freestyle"],
+  "Luca Harrington" => ["Spyder", "Jiberish"],
   "Mac Forehand"    => ["Oakley", "Spyder"],
-  "Tormod Frostad"  => ["Capeesh"],
-  "Matej Svancer"   => ["Capeesh"],
+  "Tormod Frostad"  => ["Capeesh", "Oakley"],
+  "Matej Svancer"   => ["Capeesh", "Harlaut Apparel"],
   "Birk Ruud"       => ["BUSI Company", "Capeesh"],
-  "Max Moffatt"     => ["Oakley", "Jiberish"],
-  "Colby Stevenson" => ["Oakley", "Jiberish"],
-  "Jesper Tjäder"   => ["Oakley", "Jiberish"],
-  "Ferdinand Dahl"  => ["Oakley", "Jiberish"],
-  "Henrik Harlaut"  => ["Harlaut Apparel", "Jiberish"],
+  "Max Moffatt"     => ["Oakley", "Armada"],
+  "Colby Stevenson" => ["Oakley"],
+  "Jesper Tjäder"   => [""],
+  "Ferdinand Dahl"  => ["Capeesh"],
+  "Henrik Harlaut"  => ["Harlaut Apparel"],
   "Candide Thovex"  => ["Candide"]
 }
 
