@@ -1,5 +1,7 @@
-<h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">Athletes</h1>
-<div class="grid grid-cols-5 gap-6">
+<div class="flex justify-center">
+  <h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">Athletes</h1>
+</div>
+<div class="grid grid-cols-5 gap-6 justify-items-center">
   <% @athletes.each do |athlete| %>
     <div class="text-center flex justify-center">
       <%= link_to athlete_path(athlete) do %>
