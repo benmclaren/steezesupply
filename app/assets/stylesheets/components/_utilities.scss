@@ -98,3 +98,8 @@ h4 {
   height: 50vh;
   object-fit: cover;
 }
+
+.text-fit {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  white-space: nowrap;
+}

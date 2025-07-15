@@ -1,12 +1,53 @@
-<h1 class="lg:text-8xl md:text-6xl sm:text-4xl hero-text !mr-4">
-  <%= @athlete.first_name %>
-  <%= @athlete.last_name %>
-</h1>
-<p><%= @athlete.nationality %></p>
-<p><%= @athlete.age %></p>
-<p><%= @athlete.home_resort %></p>
-<% @athlete.brands.each do |brand| %>
-  <p><%= brand.name %></p>
-<% end %>
+<div class="lg:grid grid-cols-2">
+  <div class="flex justify-center h-96">
+    <%= cl_image_tag @athlete.photo.key, class: "rounded-full object-cover size-96 mb-3" %>
+  </div>
+
+  <div class="w-full lg:w-[calc(100%_-_128px)] lg:mx-auto max-lg:px-4.5 flex flex-col justify-around">
+    <div class="flex w-sm items-center">
+      <h1 class="lg:text-6xl md:text-4xl sm:text-2xl !mr-4">
+        <%= @athlete.first_name %>
+        <%= @athlete.last_name %>
+      </h1>
+    </div>
+    <div>
+      <div class="stats shadow-sm">
+        <div class="stat">
+          <div class="stat-title">Age</div>
+          <div class="stat-value"><%= @athlete.age %></div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-title">Nationality</div>
+          <div class="stat-value"><%= @athlete.nationality %></div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-title">Home Resort</div>
+          <div class="stat-value text-wrap"><%= @athlete.home_resort %></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="max-w-lg">
+        <%= @athlete.bio %>
+      </p>
+    </div>
+  </div>
+</div>
 
 
+
+
+
+<div class="mt-24 bg-gray-100 rounded-lg p-8 ">
+  <h2 class="text-6xl font-bold"><%= @athlete.first_name %>'s Steeze</h2>
+
+  <div class="grid grid-cols-5 gap-6 justify-items-center items-center">
+    <% @athlete.brands.each do |brand| %>
+      <%= link_to brand_path(brand) do %>
+        <%= cl_image_tag brand.photo.key, class: "object-cover mb-3 w-24" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
