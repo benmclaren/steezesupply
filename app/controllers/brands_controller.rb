@@ -6,5 +6,6 @@ class BrandsController < ApplicationController
 
   def show 
     @brand = Brand.all.find { |b| b.to_param == params[:id] }
+    @favourite = Favourite.new
   end
 end

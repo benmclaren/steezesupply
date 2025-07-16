@@ -32,7 +32,7 @@
           <ul>
             <li class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
               <%= link_to "My Profile" %>
-              <%= link_to "Favourites" %>
+              <%= link_to "Favourites", favourites_path %>
               <%= link_to "Glossary" %>
               <div class="divider"></div>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"btn btn-soft btn-error" %>

@@ -1,6 +1,7 @@
 class Brand < ApplicationRecord
   has_many :athlete_brands
   has_many :athletes, through: :athlete_brands
+  has_many :favourites
   has_one_attached :photo
   include PgSearch::Model
 
@@ -10,7 +11,15 @@ class Brand < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  # def to_param
+  #   name.parameterize
+  # end
+
+  def set_slug
+    self.slug = name.parameterize
+  end
+
   def to_param
-    name.parameterize
+    slug
   end
 end

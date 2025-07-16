@@ -7,49 +7,57 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.destroy_all
+puts "all users destroyed"
+
+User.create(email: "test@test.com", password: "123456")
+puts "user created"
+
 AthleteBrand.destroy_all
 Brand.destroy_all
 puts "all brands destroyed"
 
+
+
 brands = [
-  { name: "Oakley", image: "oakley.png" },
-  { name: "ELHO Freestyle", image: "elho_freestyle.png" },
-  { name: "Capeesh", image: "capeesh.png" },
-  { name: "BUSI Company", image: "busi_company.png" },
-  { name: "Spyder", image: "spyder.png" },
-  { name: "Harlaut Apparel", image: "harlaut_apparel.png" },
-  { name: "Vulgus 365", image: "vulgus_365.png" },
-  { name: "Lead Fabrics", image: "lead_fabrics.png" },
-  { name: "Jibskin", image: "jibskin.png" },
-  { name: "Jiberish", image: "jiberish.png" },
-  { name: "Planks", image: "planks.png" },
-  { name: "NinetyRoll", image: "ninetyroll.png" },
-  { name: "Candide", image: "candide.png" },
-  { name: "Faction", image: "faction.png"},
-  { name: "Armada", image: "armada.png"},
-  { name: "Vökl", image: "vökl.png"},
-  { name: "Vishnu", image: "vishnu.png"},
-  { name: "K2", image: "k2.png"},
-  { name: "Head", image: "head.png"},
-  { name: "Moncler", image: "moncler.png"},
-  { name: "ON3P", image: "on3p.png"},
-  { name: "Marker", image: "marker.png"},
-  { name: "Tyrolia", image: "tyrolia.png"},
-  { name: "Smith", image: "smith.png"},
-  { name: "Line", image: "line.png"},
-  { name: "Atomic", image: "atomic.png"},
-  { name: "100%", image: "100percent.png"},
-  { name: "1000", image: "1000.png"},
-  { name: "Giro", image: "giro.png"},
-  { name: "Dragon", image: "dragon.png"},
-  { name: "Sweet Protection", image: "sweetprotection.png"},
-  { name: "Dope Snow", image: "dope.png"}
+  { name: "Oakley", image: "oakley.png", bio:"A global leader in eyewear and performance gear, known for high-tech lenses and bold designs.", address: "https://www.oakley.com", email: "customerservice@oakley.com", social: "https://www.instagram.com/oakleyskiing/" },
+  { name: "ELHO Freestyle", image: "elho_freestyle.png", bio:"A brand that specializes in freestyle skiing gear, known for its innovative designs and high-performance products.", address: "https://www.elho.nl", email: "info@elho.nl", social: "https://www.instagram.com/elhofreestyle/" },
+  { name: "Capeesh", image: "capeesh.png", bio: "A stylish outerwear brand created by Ferdinand Dahl blending street fashion with functional snow gear.", address: "https://capeeshsupply.com", email: "-", social: "https://www.instagram.com/capeeshsupply/" },
+  { name: "BUSI Company", image: "busi_company.png", bio: "A lifestyle and apparel brand created by Birk Ruud rooted in skiing culture with a clean, minimal aesthetic.", address: "https://busicompany.com", email: "-", social: "https://www.instagram.com/busicompany/" },
+  { name: "Spyder", image: "spyder.png", bio: "Premium ski apparel brand offering high-performance outerwear for alpine athletes.", address: "https://www.spyder.com", email: "customerservice@spyder.com", social: "https://www.instagram.com/spyder_freeski/" },
+  { name: "Harlaut Apparel", image: "harlaut_apparel.png", bio: "Founded by Henrik Harlaut, this brand fuses ski culture with streetwear influences.", address: "https://harlautapparel.co", email: "support@henrikharlaut.com", social: "https://www.instagram.com/harlautapparelco/" },
+  { name: "Vulgus 365", image: "vulgus_365.png", bio: "A community-driven brand representing freestyle skiing and everyday rebellion.", address: "https://vulgus365.com", email: "-", social: "https://www.instagram.com/vulgus365/" },
+  { name: "Lead Fabrics", image: "lead_fabrics.png", bio: "Technical clothing brand delivering durable gear for action sports and harsh climates with iconic freestyle design.", address: "https://leadfabrics.com", email: "-", social: "https://www.instagram.com/lead.fabrics/" },
+  { name: "Jibskin", image: "jibskin.png", bio: "Specializes in bold, freestyle ski apparel built for riders who live in the park.", address: "https://jibskin.com", email: "-", social: "https://www.instagram.com/jibskin_/" },
+  { name: "Jiberish", image: "jiberish.png", bio: "A pioneer in ski streetwear, known for its stylish, high-quality apparel with roots in urban skiing.", address: "https://www.jiberish.com", email: "-", social: "https://www.instagram.com/jiberish/" },
+  { name: "Planks", image: "planks.png", bio: "Rider-owned brand creating fun, functional ski clothing with a strong eco-conscious ethos.", address: "https://www.planksclothing.com", email: "hello@planksclothing.com", social: "https://www.instagram.com/planksclothing/" },
+  { name: "NinetyRoll", image: "ninetyroll.png", bio: "A new-wave ski label with vibrant graphics and a strong freestyle identity.", address: "https://ninetyroll.com", email: "-", social: "https://www.instagram.com/ninetyroll.snowpants/" },
+  { name: "Candide", image: "candide.png", bio: "Founded by legendary skier Candide Thovex, this brand blends high-end design with performance.", address: "https://candide.co", email: "-", social: "candidecollection" },
+  { name: "Faction", image: "faction.png", bio: "Freeski-focused ski brand renowned for durability, progressive shapes, and the Candide series.", address: "https://factionskis.com", email: "info@factionskis.com", social: "https://www.instagram.com/factionskis/" },
+  { name: "Armada", image: "armada.png", bio: "One of the original freeski brands, offering skis and apparel for park, pow, and everything in between.", address: "https://www.armadaskis.com", email: "info@armadaskis.com", social: "https://www.instagram.com/armadaskis/" },
+  { name: "Vökl", image: "vökl.png", bio: "German engineering meets ski innovation; Vökl produces precise, high-performance skis.", address: "https://www.voelkl.com", email: "info@völkl.com", social: "https://www.instagram.com/volklskis/" },
+  { name: "Vishnu", image: "vishnu.png", bio: "Cult favorite in the park scene, known for super-soft, buttery skis made for creativity.", address: "https://www.vishnuskis.com", email: "vishnufreeski@gmail.com", social: "https://www.instagram.com/vishnufreeski/" },
+  { name: "K2", image: "k2.png", bio: "Iconic American brand making skis, boots, and gear for all-mountain and freestyle skiers.", address: "https://k2snow.com", email: "info@k2sports.com", social: "https://www.instagram.com/k2.skis/" },
+  { name: "Head", image: "head.png", bio: "Global sports equipment brand with high-performance skis trusted by pros", address: "https://www.head.com", email: "service@head.com", social: "https://www.instagram.com/head_ski/" },
+  { name: "Moncler", image: "moncler.png", bio: "Luxury outerwear brand blending high fashion with technical alpine heritage.", address: "https://www.moncler.com", email: "client.service@moncler.com", social: "https://www.instagram.com/moncler/" },
+  { name: "ON3P", image: "on3p.png", bio: "Handmade in Portland, ON3P skis are known for their durability, flex, and park-ready feel.", address: "https://www.on3pskis.com", email: "info@on3pskis.com", social: "https://www.instagram.com/on3pskico/" },
+  { name: "Marker", image: "marker.png", bio: "A leading brand in ski bindings, offering trusted performance and safety tech.", address: "https://www.marker.net", email: "info@marker.net", social: "https://www.instagram.com/markerproducts/" },
+  { name: "Tyrolia", image: "tyrolia.png", bio: "Austrian binding manufacturer delivering high-quality, reliable alpine ski bindings.", address: "https://www.tyrolia.com", email: "info@tyrolia.com", social: "https://www.instagram.com/tyroliabindings/" },
+  { name: "Smith", image: "smith.png", bio: "A leader in helmets and goggles with strong innovation in optics and protection.", address: "https://www.smithoptics.com", email: "consumersupport@smithoptics.com", social: "https://www.instagram.com/smithoptics/" },
+  { name: "Line", image: "line.png", bio: "Freestyle-first ski brand with creative designs and rider-driven innovation.", address: "https://lineskis.com", email: "line@k2sports.com", social: "https://www.instagram.com/lineskis/" },
+  { name: "Atomic", image: "atomic.png", bio: "Austrian ski brand offering a wide range of high-performance gear for all snow conditions.", address: "https://www.atomic.com", email: "info@atomic.com", social: "https://www.instagram.com/atomicski/" },
+  { name: "100%", image: "100percent.png", bio: "High-performance eyewear and gear brand rooted in motocross, now making moves in snow sports.", address: "https://www.100percent.com", email: "support@100percent.com", social: "https://www.instagram.com/100percentsnow/" },
+  { name: "1000", image: "1000.png", bio: "A newer brand with a minimalist design language and functional snowwear ethos.", address: "https://1000skis.com", email: "support@1000skis.com", social: "https://www.instagram.com/1000skis/" },
+  { name: "Giro", image: "giro.png", bio: "Trusted brand for snow helmets and goggles, combining safety with comfort and style.", address: "https://www.giro.com", email: "customerservice@giro.com", social: "https://www.instagram.com/girosnow/" },
+  { name: "Dragon", image: "dragon.png", bio: "Known for bold goggle designs and high-quality lenses favored by freestyle riders.", address: "https://www.dragonalliance.com", email: "customerservice@dragonalliance.com", social: "https://www.instagram.com/dragonalliance/" },
+  { name: "Sweet Protection", image: "sweetprotection.png", bio: "Norwegian brand combining advanced materials with sleek Scandinavian design for helmets and outerwear.", address: "https://www.sweetprotection.com", email: "support@sweetprotection.com", social: "https://www.instagram.com/sweetprotection/" },
+  { name: "Dope Snow", image: "dope.png", bio: "A popular outerwear brand with street-inspired designs at an accessible price point.", address: "https://www.dopesnow.com", email: "support@dopesnow.com", social: "https://www.instagram.com/dopesnow/" }
 ]
 
 brand_records = {}
 
 brands.each do |brand_data|
-  brand = Brand.create(name: brand_data[:name])
+  brand = Brand.create(name: brand_data[:name], bio: brand_data[:bio], address: brand_data[:address], email: brand_data[:email], social: brand_data[:social])
   
   # Attach image from local assets
   brand.photo.attach(

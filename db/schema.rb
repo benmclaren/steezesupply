@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_03_150937) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_16_151354) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +68,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_03_150937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.text "bio"
+    t.string "email"
+    t.string "address"
+    t.string "social"
+    t.string "slug"
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "brand_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_favourites_on_brand_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,4 +100,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_03_150937) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "athlete_brands", "athletes"
   add_foreign_key "athlete_brands", "brands"
+  add_foreign_key "favourites", "brands"
+  add_foreign_key "favourites", "users"
 end
