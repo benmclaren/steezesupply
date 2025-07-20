@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create]
   end
   resources :athletes, only: [:index, :show]
-  resources :favourites, only: [:index]
+  resources :favourites, only: [:index, :destroy]
   get '/search', to: 'search#index', as: :search
 end

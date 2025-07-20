@@ -19,4 +19,10 @@ class FavouritesController < ApplicationController
     end
   end
 
+  def destroy
+    @favourite = Favourite.find(params[:id])
+    # raise
+    @favourite.destroy
+  end
+
 end

@@ -5,7 +5,10 @@
       <i class="fa-regular fa-bookmark text-2xl cursor-pointer"></i>
     <% end %>
   <% else %>
-    <i class="fa-solid fa-bookmark text-2xl cursor-pointer"></i>
+    <% favourite = current_user.favourites.find_by(brand: @brand) %>
+    <%= link_to favourite_path(favourite), data: {turbo_method: :delete} do %>
+      <i class="fa-solid fa-bookmark text-2xl cursor-pointer"></i>
+    <% end %>
   <% end %>
 </div>
 <div class="flex flex-col items-center">
